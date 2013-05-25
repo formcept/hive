@@ -104,7 +104,7 @@ public class HiveHBaseTableOutputFormat extends
   public void checkOutputSpecs(FileSystem fs, JobConf jc) throws IOException {
 
     //obtain delegation tokens for the job
-    TableMapReduceUtil.initCredentials(jc);
+    //TableMapReduceUtil.initCredentials(jc);
 
     String hbaseTableName = jc.get(HBaseSerDe.HBASE_TABLE_NAME);
     jc.set(TableOutputFormat.OUTPUT_TABLE, hbaseTableName);

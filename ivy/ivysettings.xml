@@ -32,6 +32,7 @@
 
   <property name="repo.maven.org" value="http://repo1.maven.org/maven2/" override="false"/>
   <property name="snapshot.apache.org" value="https://repository.apache.org/content/repositories/snapshots/" override="false"/>
+  <property name="repo.cloudera" value="https://repository.cloudera.com/artifactory/libs-release" override="false"/>
   <property name="maven2.pattern" value="[organisation]/[module]/[revision]/[module]-[revision](-[classifier])"/>
   <property name="repo.dir" value="${user.home}/.m2/repository"/>
   <property name="maven2.pattern.ext"  value="${maven2.pattern}.[ext]"/>
@@ -53,6 +54,7 @@
     <ibiblio name="apache-snapshot" root="${snapshot.apache.org}" m2compatible="true"
              checkmodified="${ivy.checkmodified}" 
              changingPattern="${ivy.changingPattern}"/>
+    <ibiblio name="cloudera" m2compatible="true" pattern="${maven2.pattern.ext}" root="${repo.cloudera}"/>
 
     <url name="datanucleus-repo" m2compatible="true">
       <artifact pattern="${datanucleus.repo}/[organisation]/[module]/[revision]/[module]-[revision].[ext]"/>
@@ -72,6 +74,7 @@
       <resolver ref="datanucleus-repo"/>
       <resolver ref="hadoop-source"/>
       <resolver ref="hadoop-source2"/>
+      <resolver ref="cloudera"/>
     </chain>
 
     <chain name="internal" dual="true">

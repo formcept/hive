@@ -416,7 +416,7 @@ public class HiveHBaseTableInputFormat extends TableInputFormatBase
   public InputSplit[] getSplits(JobConf jobConf, int numSplits) throws IOException {
 
     //obtain delegation tokens for the job
-    TableMapReduceUtil.initCredentials(jobConf);
+    //TableMapReduceUtil.initCredentials(jobConf);
 
     String hbaseTableName = jobConf.get(HBaseSerDe.HBASE_TABLE_NAME);
     setHTable(new HTable(HBaseConfiguration.create(jobConf), Bytes.toBytes(hbaseTableName)));
